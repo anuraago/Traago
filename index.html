@@ -1,0 +1,49 @@
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>New Tab</title>
+    <meta name="description" content="Chrome New Tab">
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <script src="tailwind.min.js"></script>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body class="bg-zinc-900">
+    <div class="flex text-white gap-2">
+        <div class="w-[60vw] p-2">
+            <h1 class="py-2 text-2xl text-zinc-100 font-bold">Recent bookmarks</h1>
+            <div class="columns-2 space-y-3 gap-2 flex-wrap" id="bookmarks">
+                <div class="flex space-x-2 items-center p-2 rounded-lg text-base bg-zinc-600 text-zinc-200">
+                    <img class="w-7 h-7 rounded-lg" src="./mmbrand.png" alt="">
+                    <div class="truncate text-ellipsis">Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim,
+                        sint?</div>
+                </div>
+            </div>
+        </div>
+        <div class="w-[40vw] flex flex-col h-screen">
+            <div class="flex py-2 pr-5 text-3xl justify-between items-end">
+                <h1 class="text-zinc-100 font-bold">Tech Stories</h1>
+                <div class="text-[#2B3467]">
+                    <button id="gridView">
+                        <span class="text-2xl material-symbols-outlined">grid_view</span>
+                    </button>
+                    <button id="listView">
+                        <span class="text-2xl material-symbols-outlined">view_list</span>
+                    </button>
+                </div>
+            </div>
+            <div class="overflow-y-auto grow">
+                <div id="stories" class="columns-2 gap-2 pr-3"></div>
+            </div>
+        </div>
+    </div>
+    <script src="./toast.min.js"></script>
+    <script src="script.js"></script>
+    <script src="links.js"></script>
+
+</body>
+
+</html>
