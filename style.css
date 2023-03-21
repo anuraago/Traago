@@ -5,7 +5,7 @@
 body {
     box-sizing: border-box;
     font-family: 'Kumbh Sans', sans-serif;
-    font-family: 'Red Hat Display', sans-serif;
+    /* font-family: 'Karla Light', sans-serif; */
     background-color: #DDE3FD;
     /* background-image: radial-gradient(circle, transparent 50%, black 120%), url('./bg1.jpeg'); */
     background-size: cover;

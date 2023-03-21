@@ -26,7 +26,7 @@ const addStories = (stories) => {
                                     <div>dev.to</div>
                                 </div>
                             </div>
-                            <a target="_" href="${story.url}" class="w-[50%] w-full">
+                            <a target="_" href="${story.url}" class="w-full">
                                 ${story.cover_image != null ? `<img class="h-full object-cover rounded" src="${story.cover_image}" />` : ""}
                             </a>
                     </div>`;
