@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>New Tab</title>
+    <style>
+        body {
+            width: 100%;
+            height: 100%;
+            font-family: Arial, sans-serif;
+            font-size: 14px;
+            line-height: 1.5;
+            padding: 10px;
+        }
+
+        css Copy code h2 {
+            margin-top: 0;
+        }
+
+        ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        li {
+            margin-bottom: 5px;
+        }
+
+        a {
+            color: #0000EE;
+            text-decoration: none;
+        }
+
+        /*Added Styles*/
+        .recent-links {
+            margin-bottom: 20px;
+        }
+
+        .recent-links li a {
+            display: block;
+            padding: 5px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+
+        .recent-links li a:hover {
+            background-color: #ddd;
+        }
+    </style>
+    <script src="./scripts/tailwind.min.js"></script>
+
+</head>
+
+<body>
+    <h2 class="text-2xl font-bold">Recent URLs</h2>
+    <ul id="recent-urls-list"></ul>
+    <h2 class="text-2xl">Bookmarks</h2>
+    <ul id="bookmarks-list"></ul>
+    <script src="newtab.js"></script>
+</body>
+
+</html>

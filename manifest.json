@@ -5,15 +5,19 @@
   "description": "All you need on new tab",
   "author": "Anurag Deore",
   "chrome_url_overrides": {
-    "newtab": "index.html"
+    "newtab": "newtab.html"
   },
   "omnibox": { "keyword": "nt" },
   "action": {
     "default_popup": "./popup/popup.html"
   },
-  "permissions": ["storage", "bookmarks", "contextMenus"],
+  "options_page": "./options/options.html",
+  "permissions": ["storage", "bookmarks", "contextMenus", "activeTab", "tabs"],
   "host_permissions": ["https://dev.to/api/articles"],
   "optional_host_permissions": ["https://*/*", "http://*/*"],
+  "background": {
+    "service_worker": "background.js"
+  },
   "icons": {
     "16": "./images/mmbrand.png",
     "128": "./images/mmbrand.png"

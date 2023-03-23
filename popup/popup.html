@@ -1,12 +1,39 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
+
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PopUp</title>
+    <title>My Extension</title>
+    <script src="../scripts/tailwind.min.js"></script>
 </head>
-<body>
-    <h1>Traago Pop Up</h1>
+
+<body class="p-3 flex flex-col h-full items-center justify-center bg-gray-200">
+    <button id="go-to-options" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
+        Go to options
+    </button>
+
+    <div class="mt-8">
+        <h2 class="text-lg font-bold mb-2">Save URL</h2>
+        <div class="flex flex-col sm:flex-row gap-2">
+            <input type="text" id="url-input" placeholder="URL" autofocus
+                class="bg-white focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent border border-gray-300 rounded-md py-2 px-4">
+            <input type="text" id="name-input" placeholder="Name (optional)"
+                class="bg-white focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent border border-gray-300 rounded-md py-2 px-4">
+            <button type="button" id="save-button"
+                class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
+                Save
+            </button>
+        </div>
+    </div>
+
+    <div class="mt-8">
+        <h2 class="text-lg font-bold mb-2">Recent URLs</h2>
+        <ul id="recent-urls-list" class="list-disc pl-4">
+            <!-- recent urls will be dynamically added here -->
+        </ul>
+    </div>
+
+    <script src="popup.js"></script>
 </body>
+
 </html>
