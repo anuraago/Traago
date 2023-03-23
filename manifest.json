@@ -1,17 +1,21 @@
 {
   "manifest_version": 3,
-  "name": "Tech Stories Tab by Hacker Noon",
+  "name": "Smart New Tab",
   "version": "1.0",
-  "description": "The latest Hacker Noon tech stories.",
-  "author": "Hacker Noon",
+  "description": "All you need on new tab",
+  "author": "Anurag Deore",
   "chrome_url_overrides": {
     "newtab": "index.html"
   },
-  "permissions": ["storage", "bookmarks"],
+  "omnibox": { "keyword": "nt" },
+  "action": {
+    "default_popup": "./popup/popup.html"
+  },
+  "permissions": ["storage", "bookmarks", "contextMenus"],
   "host_permissions": ["https://dev.to/api/articles"],
   "optional_host_permissions": ["https://*/*", "http://*/*"],
   "icons": {
-    "16": "mmbrand.png",
-    "128": "mmbrand.png"
+    "16": "./images/mmbrand.png",
+    "128": "./images/mmbrand.png"
   }
 }

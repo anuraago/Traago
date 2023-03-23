@@ -51,3 +51,27 @@ function appendshorts() {
     });
 }
 appendshorts();
+
+
+
+function appendNotes() {
+    const noteList =
+        ['cum', 'sint', 'laudantium', 'necessit', 'atibus', 'error', 'optio dolores', ' commodi impedit ', 'voluptatum magnam']
+
+    noteList.forEach(item => {
+        const node = document.createElement("div");
+        html = `
+        <div class="flex group justify-between items-center rounded-lg bg-zinc-700 text-zinc-100 p-2">
+            <a href="${item}" class="pl-2 overflow-hidden text-ellipsis">${item}</a>
+            <div class="block shrink-0 invisible group-hover:visible pl-2">
+                <button><span class="text-base material-symbols-outlined">edit</span></button>
+                <button><span class="text-base material-symbols-outlined">clear</span></button>
+            </div>
+        </div>
+                `;
+        node.innerHTML = html;
+        document.getElementById("notes").appendChild(node);
+
+    });
+}
+appendNotes();
