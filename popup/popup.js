@@ -9,8 +9,14 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 
     var urlInput = document.getElementById('url-input');
-    chrome.runtime.sendMessage('getTabUrl', function (url) {
-        urlInput.value = url;
+    var tabIconInput = document.getElementById('tab-icon');
+    var favicon_image = document.getElementById('favicon_image');
+    chrome.tabs.query({ active: true, currentWindow: true }, function (tabs) {
+        chrome.tabs.sendMessage(tabs[0].id, { type: "getFaviconSrc" }, function (imgSrc) {
+            favicon_image.src = imgSrc;
+            tabIconInput.value = imgSrc;
+        });
+        urlInput.value = tabs[0].url;
     });
 
     var recentUrlsList = document.getElementById('recent-urls-list');
@@ -33,14 +39,11 @@ document.addEventListener('DOMContentLoaded', function () {
         var nameInput = document.getElementById('name-input');
         var url = urlInput.value;
         var name = nameInput.value;
+        var icon = tabIconInput.value;
         chrome.storage.local.get(['urls'], function (result) {
             var urls = result.urls || [];
-            urls.unshift({ url: url, name: name });
-            if (urls.length > 5) {
-                urls.pop();
-            }
+            urls.unshift({ url: url, name: name, icon: icon });
             chrome.storage.local.set({ urls: urls }, function () {
-
                 var listItem = document.createElement('li');
                 var link = document.createElement('a');
                 link.href = url;
@@ -48,6 +51,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 link.textContent = name;
                 listItem.appendChild(link);
                 recentUrlsList.insertBefore(listItem, recentUrlsList.firstChild);
+                chrome.tabs.sendMessage(tabs[0].id, { type: "updateUrlList" });
             });
         });
     });

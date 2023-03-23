@@ -49,15 +49,30 @@
             background-color: #ddd;
         }
     </style>
-    <script src="./scripts/tailwind.min.js"></script>
 
 </head>
 
 <body>
     <h2 class="text-2xl font-bold">Recent URLs</h2>
-    <ul id="recent-urls-list"></ul>
+    <div id="recent-urls-list"></div>
+    <div class="form">
+        <input type="text" id="urlInput" placeholder="url">
+        <input type="text" id="nameInput" placeholder="Name your quick Link">
+        <button id="addQL">Add</button>
+    </div>
+    <button id="showQLForm">+ Add QL</button>
+    <hr>
     <h2 class="text-2xl">Bookmarks</h2>
     <ul id="bookmarks-list"></ul>
+    <hr>
+    <h2>Notes List</h2>
+    <div id="notes-list"></div>
+    <div class="form">
+        <textarea id="noteInput" placeholder="enter note"></textarea>
+        <button id="addNote">Add</button>
+    </div>
+    <hr>
+    <div id="stories"></div>
     <script src="newtab.js"></script>
 </body>
 
