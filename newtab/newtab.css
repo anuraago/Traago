@@ -1,0 +1,86 @@
+:root {
+  --bg-light: #eeeeee;
+  --card-bg-light: #ffffff;
+  --gap: 15px;
+  --radius: 10px;
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background-color: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #888888;
+  border-radius: 50px;
+}
+
+body {
+  font-family: "Satoshi Variable", monospace;
+  font-weight: 500;
+  background-color: var(--bg-light);
+  font-size: 14px;
+  padding: 10px;
+  display: flex;
+  column-gap: var(--gap);
+  height: 100vh;
+}
+.card {
+  padding: 10px;
+  border-radius: var(--radius);
+  background-color: var(--card-bg-light);
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+}
+
+.info_container {
+  flex-basis: 70%;
+  display: flex;
+  column-gap: var(--gap);
+  width: 100%;
+  height: 100%;
+}
+.link_N_bookmark {
+  height: 100%;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  row-gap: var(--gap);
+}
+.quick_links,
+.book_marks {
+  flex: 1;
+}
+.notes {
+  flex-grow: 1;
+}
+.story_container {
+  flex-basis: 30%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+.story_container h2 {
+  padding: 10px 10px;
+  background-color: var(--card-bg-light);
+  border-radius: var(--radius);
+}
+.padContainer {
+  flex-grow: 1;
+  overflow: hidden;
+}
+.storyDiv {
+  height: 100%;
+  padding-top: 10px;
+  scrollbar-gutter: stable;
+  overflow: auto;
+  padding-bottom: 50px;
+}
+.story {
+  background-color: white;
+}

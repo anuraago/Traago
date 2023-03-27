@@ -4,75 +4,58 @@
 <head>
     <meta charset="UTF-8">
     <title>New Tab</title>
-    <style>
-        body {
-            width: 100%;
-            height: 100%;
-            font-family: Arial, sans-serif;
-            font-size: 14px;
-            line-height: 1.5;
-            padding: 10px;
-        }
-
-        css Copy code h2 {
-            margin-top: 0;
-        }
-
-        ul {
-            list-style: none;
-            padding: 0;
-            margin: 0;
-        }
-
-        li {
-            margin-bottom: 5px;
-        }
-
-        a {
-            color: #0000EE;
-            text-decoration: none;
-        }
-
-        /*Added Styles*/
-        .recent-links {
-            margin-bottom: 20px;
-        }
-
-        .recent-links li a {
-            display: block;
-            padding: 5px;
-            border: 1px solid #ddd;
-            border-radius: 5px;
-        }
-
-        .recent-links li a:hover {
-            background-color: #ddd;
-        }
-    </style>
-
+    <link rel="stylesheet" href="./newtab.css">
 </head>
 
 <body>
-    <h2 class="text-2xl font-bold">Recent URLs</h2>
-    <div id="recent-urls-list"></div>
-    <div class="form">
-        <input type="text" id="urlInput" placeholder="url">
-        <input type="text" id="nameInput" placeholder="Name your quick Link">
-        <button id="addQL">Add</button>
+    <div class="info_container">
+        <div class="link_N_bookmark">
+            <div class="card time">
+                <h1>12:01</h1>
+                <p>27th March, Monday</p>
+            </div>
+            <div class="card quick_links">
+                <h2 class="text-2xl font-bold">Quick Links</h2>
+                <div id="recent-urls-list"></div>
+                <div class="form">
+                    <input type="text" id="urlInput" placeholder="url">
+                    <input type="text" id="nameInput" placeholder="Name your quick Link">
+                    <button id="addQL">Add</button>
+                </div>
+                <button id="showQLForm">+ Add QL</button>
+            </div>
+            <div class="card book_marks">
+                <h2 class="text-2xl">Bookmarks</h2>
+                <ul id="bookmarks-list"></ul>
+            </div>
+        </div>
+        <div class="card notes">
+            <h2>Notes List</h2>
+            <div id="notes-list"></div>
+            <div class="form">
+                <textarea id="noteInput" placeholder="enter note"></textarea>
+                <button id="addNote">Add</button>
+            </div>
+        </div>
     </div>
-    <button id="showQLForm">+ Add QL</button>
-    <hr>
-    <h2 class="text-2xl">Bookmarks</h2>
-    <ul id="bookmarks-list"></ul>
-    <hr>
-    <h2>Notes List</h2>
-    <div id="notes-list"></div>
-    <div class="form">
-        <textarea id="noteInput" placeholder="enter note"></textarea>
-        <button id="addNote">Add</button>
+    <div class="story_container">`
+        <h2>Tech Stories</h2>
+        <div class="padContainer">
+            <div class="storyDiv" id="stories">
+                <div>
+                    <a>
+                        <img width="20%"
+                            src="https://res.cloudinary.com/practicaldev/image/fetch/s--sYBQr0Pf--/c_imagga_scale,f_auto,fl_progressive,h_420,q_auto,w_1000/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/t4payd7ngd785081vqg5.png">
+                        What's the most mind-blowing AI example you've seen?
+                    </a>
+                    <button data-id="1414130">
+                        <span data-id="1414130" class="material-symbols-outlined">1414130 - favorite</span>
+                    </button>
+                    <hr>
+                </div>
+            </div>
+        </div>
     </div>
-    <hr>
-    <div id="stories"></div>
     <script src="newtab.js"></script>
 </body>
 
