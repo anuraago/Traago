@@ -1,8 +1,15 @@
 :root {
   --bg-light: #eeeeee;
+  --grey-light: #e8e8e8;
   --card-bg-light: #ffffff;
+  --dark-grey: #484848;
+  --grey-3: #aaaaaa;
+  --primary: #e96c79;
+  --secondary: #8b5cf6;
   --gap: 15px;
   --radius: 10px;
+  --svg-size: 1.2rem;
+  --font: "Satoshi Variable";
 }
 * {
   margin: 0;
@@ -22,65 +29,282 @@
 }
 
 body {
-  font-family: "Satoshi Variable", monospace;
+  font-family: var(--font), monospace;
   font-weight: 500;
   background-color: var(--bg-light);
   font-size: 14px;
-  padding: 10px;
   display: flex;
   column-gap: var(--gap);
   height: 100vh;
+}
+.shadow {
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+}
+.hoverShadow:hover {
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
 }
 .card {
   padding: 10px;
   border-radius: var(--radius);
   background-color: var(--card-bg-light);
-  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+}
+.vert-divider {
+  height: 100%;
+}
+
+.header {
+  font-size: 1.3rem;
+  margin-bottom: 8px;
 }
 
 .info_container {
   flex-basis: 70%;
   display: flex;
+  flex-grow: 0;
   column-gap: var(--gap);
   width: 100%;
   height: 100%;
+  padding: 10px 0px 10px 10px;
 }
+
 .link_N_bookmark {
   height: 100%;
-  flex-grow: 1;
+  flex-shrink: 0;
   display: flex;
   flex-direction: column;
   row-gap: var(--gap);
 }
-.quick_links,
-.book_marks {
-  flex: 1;
-}
+
+/* Note styles */
 .notes {
   flex-grow: 1;
 }
+
+.notesList {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.note_form {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 10px;
+}
+
+.notes_input {
+  font: inherit;
+  padding: 10px;
+  flex: 1;
+  height: 100px;
+  background-color: var(--bg-light);
+  border-radius: var(--radius);
+  border: 0.5px solid var(--bg-light);
+  max-height: 200px;
+}
+
+.notes_input:focus,
+.notes_input:active,
+.note_add_btn:hover,
+.note_add_btn:active,
+.note_add_btn:focus {
+  outline: none;
+  border: 1.5px solid black;
+}
+
+.note_add_btn {
+  font: inherit;
+  font-size: 1.1rem;
+  cursor: pointer;
+  background: var(--card-bg-light);
+  text-align: center;
+  padding: 10px 25px;
+  border-radius: var(--radius);
+  border: 0.5px solid var(--bg-light);
+  max-height: 50px;
+}
+
+.note {
+  padding: 10px;
+  border: 1px solid var(--grey-light);
+  border-radius: var(--radius);
+  position: relative;
+  width: 100%;
+}
+
+.note_content {
+  white-space: pre-line;
+  font-size: medium;
+}
+
+.note:hover > .note_actions {
+  display: flex;
+}
+.note_actions {
+  position: absolute;
+  display: none;
+  width: max-content;
+  gap: 5px;
+  justify-content: space-between;
+  top: 5px;
+  right: 5px;
+}
+.note_add_btn:active,
+.note_copy:active,
+.note_delete:active {
+  transform: scale(0.95);
+}
+.note_copy img,
+.note_delete img {
+  width: 15px;
+  height: 15px;
+}
+.note_copy,
+.note_delete {
+  display: flex;
+  gap: 3px;
+  font: inherit;
+  font-size: smaller;
+  cursor: pointer;
+  background: var(--grey-light);
+  text-align: center;
+  padding: 5px 10px;
+  border-radius: var(--radius);
+  border: 0.5px solid var(--bg-light);
+  max-height: 50px;
+}
+
+/* Story Styles */
 .story_container {
   flex-basis: 30%;
   height: 100%;
   display: flex;
   flex-direction: column;
+  padding: 10px 0px;
 }
-.story_container h2 {
-  padding: 10px 10px;
+
+.story_container .titleContainer {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  justify-content: space-between;
   background-color: var(--card-bg-light);
   border-radius: var(--radius);
+  margin-bottom: 10px;
+  padding: 10px;
+  gap: 8px;
+}
+
+.story_container h2 {
+  flex-grow: 1;
+}
+
+.story_layouts {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  gap: 5px;
+}
+
+.layout_btn {
+  all: unset;
+  background: transparent;
+  color: var(--secondary);
+  position: relative;
+  cursor: pointer;
+  border-radius: var(--radius);
+  padding: 4px 6px;
+}
+.layout_btn svg {
+  height: var(--svg-size);
+  width: var(--svg-size);
+}
+.layout_btn:hover {
+  color: var(--primary);
+  background-color: #f6f6f6;
 }
 .padContainer {
   flex-grow: 1;
-  overflow: hidden;
+  height: 100%;
+  overflow-y: scroll;
 }
 .storyDiv {
-  height: 100%;
-  padding-top: 10px;
-  scrollbar-gutter: stable;
-  overflow: auto;
-  padding-bottom: 50px;
+  column-count: 2;
+  gap: 10px;
+  margin-bottom: 20px;
+  padding-right: 5px;
 }
 .story {
   background-color: white;
+  border-radius: var(--radius);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  width: 100%;
+  margin-bottom: 10px;
+  transition: all 0.2s ease-out;
+}
+
+.storyDiv.no_image .story > .story__image_a {
+  display: none !important;
+}
+
+.storyDiv.image .story > .story__image_a {
+  display: block !important;
+}
+.story:hover {
+  box-shadow: none !important;
+  transform: scale(0.98);
+}
+
+.story__image {
+  width: 100%;
+}
+.story__title {
+  all: unset;
+}
+.story__title > h1 {
+  cursor: pointer;
+  font-size: 1.05rem;
+  padding: 8px;
+}
+.story__title:hover > h1 {
+  color: var(--primary);
+}
+
+.story__controlInfo {
+  padding: 5px 10px;
+  display: flex;
+  width: 100%;
+  align-items: center;
+  justify-content: space-between;
+}
+.story__like {
+  all: unset;
+  background: transparent;
+  color: var(--primary);
+  position: relative;
+  cursor: pointer;
+}
+.story__like svg {
+  height: var(--svg-size);
+  width: var(--svg-size);
+  z-index: 5;
+}
+.story__like:hover svg {
+  fill: var(--primary);
+}
+.overLap {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 100%;
+  width: 100%;
+  z-index: 10;
+}
+
+.story_source {
+  color: var(--secondary);
+  font-size: smaller;
 }
