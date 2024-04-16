@@ -85,3 +85,51 @@ body {
 
 
 /* BOOKMARK STYLES */
+#links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.folder {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    width: min-content;
+    min-width: 100px;
+    height: fit-content;
+    overflow: hidden;
+    cursor: pointer;
+    user-select: none;
+    background-color: rgb(253, 236, 236);
+    color: red;
+    white-space: nowrap;
+    padding: 8px;
+    border-radius: 8px;
+    overflow: hidden;
+}
+.folderItems.active {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    height: 100%;
+    width: 100%;
+}
+
+.folderItems {
+    overflow: hidden;
+    height: 0;
+    width: 0;
+}
+
+/* qlItem bg-green-50 text-green-600 border border-green-100 rounded-2xl space-x-1.5 py-1 px-1.5 text-sm flex items-center whitespace-nowrap */
+.qlItem {
+    height: fit-content;
+    display: block;
+    flex: 1;
+    min-width: 100px;
+    background-color: lightcyan;
+    color: teal;
+    padding: 8px;
+    border-radius: 8px;
+}

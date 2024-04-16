@@ -11,6 +11,13 @@
   "action": {
     "default_popup": "./popup/popup.html"
   },
+  "web_accessible_resources": [
+    {
+      "resources": ["_favicon/*"],
+      "matches": ["<all_urls>"],
+      "extension_ids": ["*"]
+    }
+  ],
   "content_scripts": [
     {
       "matches": ["<all_urls>"],
@@ -18,7 +25,15 @@
     }
   ],
   "options_page": "./options/options.html",
-  "permissions": ["storage", "bookmarks", "contextMenus", "activeTab", "tabs"],
+  "permissions": [
+    "storage",
+    "bookmarks",
+    "contextMenus",
+    "activeTab",
+    "tabs",
+    "topSites",
+    "favicon"
+  ],
   "host_permissions": ["https://dev.to/api/articles"],
   "optional_host_permissions": ["https://*/*", "http://*/*"],
   "background": {

@@ -1,0 +1,365 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bootstrap demo</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.3/font/bootstrap-icons.css">
+    <style>
+        body {
+            font-family: "Rubik";
+            /* color: #214057; */
+            color: #214057;
+            font-size: 16px;
+        }
+
+        /* h1 {
+            font-size: 5rem;
+            font-family: "Monolisa", "Gilroy";
+            background-image: linear-gradient(to right, #052193, #8f10d3, #ff0084);
+            -webkit-text-fill-color: transparent;
+            -webkit-background-clip: text;
+        } */
+        .head {
+            font-size: 43px;
+            font-family: 'Monty';
+        }
+
+        .pcolor {
+            color: #69A84F;
+        }
+
+        .item {
+            padding: 3px 10px;
+            border: 1px solid lightgray;
+            color: #214057;
+            margin-right: 10px;
+            border-radius: 5px;
+            margin-bottom: 10px;
+            font-size: 14px;
+            width: fit-content;
+        }
+
+        .bi-img {
+            background: #ECF4F6;
+            padding: 10px;
+            border-radius: 50%;
+            margin-right: 3px;
+            color: #214057;
+            width: 40px;
+        }
+
+        .bi {
+            background: #ECF4F6;
+            padding: 5px 10px;
+            border-radius: 50%;
+            margin-right: 3px;
+            color: #214057;
+            font-size: 1.2rem;
+            margin-right: 5px;
+        }
+
+        .headlink {
+            text-decoration: none;
+            color: inherit;
+            /* color: #69A84F; */
+        }
+
+        .bdvert {
+            position: relative;
+        }
+
+        .bdvert:before {
+            content: '';
+            height: 60%;
+            width: 0.5px;
+            position: absolute;
+            left: 0;
+            top: 25%;
+            background-color: #c7c7c7;
+        }
+
+        .note {
+            font-size: 8px;
+            position: absolute;
+            bottom: 0;
+            right: 50%;
+        }
+
+        /* timeline */
+        .htlc {
+            display: block;
+            position: relative;
+            margin: 10px 5px;
+        }
+
+        .tlhr {
+            position: absolute;
+            top: 50%;
+            left: -189px;
+            width: 400px;
+            border: none;
+            opacity: 1 !important;
+            height: 3px;
+            background-color: #69A84F;
+            transform: rotate(-90deg);
+        }
+
+        .item-detail,
+        .item-title,
+        .item-loc {
+            margin: 0px 5px;
+        }
+
+        .item-title {
+            font-weight: 500;
+        }
+
+        .htlc .tl-item {
+            list-style: none;
+            margin-left: 10px;
+            /* border-left: 2px solid #69A84F; */
+            position: relative;
+            padding: 0 0 0px 30px;
+        }
+
+        .htlc .tl-item:nth-child(3) {
+            margin-left: 14px;
+        }
+
+        .item-loc {
+            color: #69A84F;
+        }
+
+        .fwsb {
+            font-weight: 500;
+        }
+
+        .item-year {
+            position: absolute;
+            left: -65px;
+            top: 55px;
+            color: #69A84F;
+            /* color: #214057; */
+            background: #ffffff;
+            font-size: 15px;
+            transform: rotate(-90deg);
+            border: 2px solid #69A84F;
+            /* border: 2px solid #214057; */
+            border-radius: 5px;
+            padding: 5px 10px;
+        }
+
+        .upper {
+            opacity: 0.2;
+            position: fixed;
+            top: -100px;
+            right: -50px;
+        }
+    </style>
+</head>
+
+<body class="p-5">
+    <img src="ui.png" alt="" class="upper">
+    <!-- <div class="container mt-5 text-center">
+        <h1 class="fw-bold">Hello, world!</h1>
+    </div> -->
+    <div class="d-flex flex-column">
+        <h1 class="head fw-bold">Anurag Deore</h1>
+        <h4 class="pcolor fw-semibold">Full Stack Developer</h4>
+        <div class="d-flex">
+            <div class="d-flex align-items-center me-4">
+                <i class="bi bi-envelope-paper"></i>
+                <a class="headlink" href="mailto:anuragdeore125@gmail.com">anuragdeore125@gmail.com</a>
+            </div>
+            <div class="d-flex align-items-center me-4">
+                <i class="bi bi-telephone"></i>
+                <a class="headlink" href="tel:7506656227">+91 7506656227</a>
+            </div>
+            <div class="d-flex align-items-center me-4">
+                <i class="bi bi-geo-alt"></i>
+                <span>Mumbai India</span>
+            </div>
+        </div>
+    </div>
+    <br>
+    <div class="row">
+        <div class="col-8">
+            <h6>EDUCATION</h6>
+            <hr class="m-0">
+            <div class="row">
+                <div class="col-9 d-flex flex-column justify-content-between my-1">
+                    <span class="fwsb">Bachelor of Engineering</span>
+                    <span>Computer Science</span>
+                    <span>University Of Mumbai</span>
+                    <span class="text-secondary">2017 - 2021</span>
+                </div>
+                <div class="col-3 d-flex flex-column justify-content-center align-items-center my-1 bdvert">
+                    <div>GPA</div>
+                    <div><span class="fw-bold pcolor">9.5</span> / 10</div>
+                </div>
+            </div>
+            <h6 class="mt-2">EXPERIENCE</h6>
+            <hr class="m-0">
+            <div class="htlc">
+                <hr class="tlhr">
+                <div class="tl-item">
+                    <div class="item-year">Since Jul 2021</div>
+                    <div class="item-title">Senior Software Engineer</div>
+                    <div class="item-loc">Larsen & Toubro Infotech</div>
+                    <div class="item-detail">
+                        <ul class="ps-3" style="list-style-type: '&#x26AC;  ';">
+                            <li>Trained and Certified on Full Stack & Devops Technologies.</li>
+                            <li>Developed fully responsive Web apps with React, Redux.</li>
+                            <li>Assisted seniors in developing restful APIs</li>
+                            <li>Collaborated with seniors developers to identify bugs and optimize performance.</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="tl-item" ng-repeat="item in retailer_history">
+                    <div class="item-year">Apr 21 - Jul 21</div>
+                    <div class="item-title">Full Stack Engineer</div>
+                    <div class="item-loc">Softway Solutions</div>
+                    <div class="item-detail">
+                        <ul class="ps-3" style="list-style-type: '&#x26AC;  ';">
+                            <li>Part of the Product team to develop hybrid android, iOS & web apps using the Flutter
+                                Framework.</li>
+                            <li>Helped design mobile app & website UI screens and wireframes.</li>
+                            <li>Wrote both Integration and Unit tests for the app.</li>
+                            <li>Worked alongside 2 senior developers to analyze, estimate and ideate the solution for a
+                                Flask based ML application. </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="tl-item" ng-repeat="item in retailer_history">
+                    <div class="item-year">Jul 20 - Sep 20</div>
+                    <div class="item-title">Full Stack Developer Intern</div>
+                    <div class="item-loc">Pikkal & Co.</div>
+                    <div class="item-detail">
+                        <ul class="ps-3" style="list-style-type: '&#x26AC;  ';">
+                            <li>Used ReactJS, Django and jQuery to develop a CMS platform.</li>
+                            <li>Analyzed and optimized performance bottlenecks in existing django based backend systems.
+                            </li>
+                            <li>Assisted in managing and hosting the site and its Mysql DB and its resources on AWS
+                                cloud with the dev team.</li>
+                            <li>Designed frontend interfaces for an analytics dashboard & prototyped them.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <h6>PROJECTS</h6>
+            <hr class="mt-0">
+            <div class="fwsb">SellIt MarketPlace App</div>
+            <ul class="ps-3" style="list-style-type: '&#x26AC;  ';">
+                <li>Marketplace app to List & sell old stuff. Built using React Native & Expo </li>
+            </ul>
+            <div class="fwsb">Golocal Job Portal</div>
+            <ul class="ps-3" style="list-style-type: '&#x26AC;  ';">
+                <li>Python-flask based webapp to find professionals near you. <a
+                        class="text-secondary text-decoration-none" href="https://g0l0cal.herokuapp.com">Live here.</a>
+                </li>
+            </ul>
+            <div class="fwsb">Data Visualization with D3.js</div>
+            <ul class="ps-3" style="list-style-type: '&#x26AC;  ';">
+                <li>Visualized various aspects of the Spotify song dataset by using the D3.js library.</li>
+            </ul>
+            <div style="font-size:14px;margin-top: -15px;">More projects on <a class="text-secondary"
+                    href="https://github.com/anurag-deore">github</a></div>
+        </div>
+        <div class="col-4">
+            <h6>FIND ME ON</h6>
+            <hr class="m-0">
+            <div class="d-flex align-items-center my-3">
+                <i class="bi bi-linkedin"></i>
+                <a class="headlink" href="https://www.linkedin.com/in/anurag-deore-4444321a0/">LinkedIn</a>
+            </div>
+            <div class="d-flex align-items-center my-3">
+                <i class="bi bi-github"></i>
+                <a class="headlink" href="https://github.com/anurag-deore">github.com/anurag-deore</a>
+            </div>
+            <div class="d-flex align-items-center my-3">
+                <i class="bi bi-dribbble"></i>
+                <a class="headlink" href="https://dribbble.com/anurag_d">dribbble.com/anurag_d</a>
+            </div>
+            <div class="d-flex align-items-center my-3">
+                <img src="fav.svg" class="bi-img">
+                <a class="headlink" href="https://www.credly.com/users/anurag-deore">Credly Badges</a>
+            </div>
+            <h6>SKILLS</h6>
+            <hr class="m-0">
+            <h6 class="mt-2 mb-3 pcolor">Front-end Stack</h6>
+            <div class="d-flex flex-wrap">
+                <div class="item">HTML</div>
+                <div class="item">CSS</div>
+                <div class="item">JS</div>
+                <div class="item">jQuery</div>
+                <div class="item">ReactJS</div>
+                <div class="item">Redux</div>
+                <div class="item">Bootstrap</div>
+                <div class="item">Ui/Ux</div>
+                <div class="item">SASS</div>
+                <div class="item">ReactNative</div>
+                <div class="item">Flutter</div>
+                <div class="item">D3.js</div>
+            </div>
+            <h6 class="mb-3 pcolor">Back-end Stack</h6>
+            <div class="d-flex flex-wrap">
+                <div class="item">Python</div>
+                <div class="item">Django</div>
+                <div class="item">Flask</div>
+                <div class="item">SQL</div>
+                <div class="item">Java EE</div>
+                <div class="item">JSP</div>
+                <div class="item">Django Rest Framework</div>
+                <div class="item">JSON</div>
+                <div class="item">REST APIs</div>
+                <div class="item">PHP</div>
+                <div class="item">Dart</div>
+            </div>
+            <h6 class="mb-3 pcolor">Data</h6>
+            <div class="d-flex flex-wrap">
+                <div class="item">AWS</div>
+                <div class="item">Firebase</div>
+                <div class="item">MongoDB</div>
+                <div class="item">MySQL</div>
+                <div class="item">GCP</div>
+                <div class="item">DjangoORM</div>
+            </div>
+            <h6 class="mb-3 pcolor">Developement Tools & Operations</h6>
+            <div class="d-flex flex-wrap">
+                <div class="item">FIGMA</div>
+                <div class="item">Git</div>
+                <div class="item">Gitlab/Github</div>
+                <div class="item">Linux</div>
+                <div class="item">Agile</div>
+            </div>
+
+            <h6 class="mt-2">CERTIFICATIONS</h6>
+            <hr class="m-0">
+            <ul class="ps-3" style="list-style-type: '&#x26AC;  ';">
+                <li class="my-2">AWS Academy Graduate</li>
+                <li class="my-2">LTI Certified Full Stack Developer</li>
+                <li class="my-2">Cisco Devnet Associate</li>
+            </ul>
+        </div>
+    </div>
+    <small class="note">Resume Coded with HTML & CSS. &#x276E;Code Here&#x2f;&#x276F;</small>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.5/dist/umd/popper.min.js"
+        integrity="sha384-Xe+8cL9oJa6tN/veChSP7q+mnSPaj5Bcu9mPX5F5xIGE0DVittaqT5lorf0EI7Vk"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.min.js"
+        integrity="sha384-kjU+l4N0Yf4ZOJErLsIcvOU2qSb74wXpOhqTvwVx3OElZRweTnQ6d31fXEoRD1Jy"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>

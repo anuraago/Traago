@@ -17,12 +17,64 @@
             <div class="p-3 flex-1 w-[33%]">
                 <h1 class="mb-5 mt-2 text-2xl text-zinc-100 font-bold">Shortcut Links</h1>
                 <button class="border p-2 text-zinc-200 w-full mb-4 rounded">+ Add shortcut link</button>
-                <div class="columns-2 gap-2 space-y-3" id="shorts"></div>
+                <div class="py-3 px-1 flex flex-wrap gap-1" id="shorts">
+                    <div
+                        class="bg-indigo-50 text-indigo-600 border border-indigo-100 rounded-2xl space-x-1.5 py-1 px-1.5 text-sm flex items-center whitespace-nowrap">
+                        <div class="h-3 w-3 bg-indigo-300 rounded-xl"></div>
+                        <div>Tailwind.CSS Prefix Applicator</div>
+                    </div>
+                    <div
+                        class="bg-teal-50 text-teal-600 border border-teal-100 rounded-2xl space-x-1.5 py-1 px-1.5 text-sm flex items-center whitespace-nowrap">
+                        <div class="h-3 w-3 bg-teal-200 rounded-xl"></div>
+                        <div>Tailwind</div>
+                    </div>
+                    <div
+                        class="bg-pink-50 text-pink-500 border border-pink-100 rounded-2xl space-x-1.5 py-1 px-1.5 text-sm flex items-center whitespace-nowrap">
+                        <div class="h-3 w-3 bg-pink-300 rounded-xl"></div>
+                        <div>CSS Prefix</div>
+                    </div>
+                    <div
+                        class="bg-sky-50 text-sky-600 border border-sky-100 rounded-2xl space-x-1.5 py-1 px-1.5 text-sm flex items-center whitespace-nowrap">
+                        <div class="h-3 w-3 bg-sky-300 rounded-xl"></div>
+                        <div>Prefix</div>
+                    </div>
+                    <div
+                        class="bg-purple-50 text-purple-600 border border-purple-100 rounded-2xl space-x-1.5 py-1 px-1.5 text-sm flex items-center whitespace-nowrap">
+                        <div class="h-3 w-3 bg-purple-300 rounded-xl"></div>
+                        <div>Tailwind.CSS </div>
+                    </div>
+
+                    <div
+                        class="bg-orange-50 text-orange-600 border border-orange-100 rounded-2xl space-x-1.5 py-1 px-1.5 text-sm flex items-center whitespace-nowrap">
+                        <div class="h-3 w-3 bg-orange-300 rounded-xl"></div>
+                        <div>Prefix Applicator</div>
+                    </div>
+                    <div
+                        class="bg-yellow-50 text-yellow-600 border border-yellow-100 rounded-2xl space-x-1.5 py-1 px-1.5 text-sm flex items-center whitespace-nowrap">
+                        <div class="h-3 w-3 bg-yellow-300 rounded-xl"></div>
+                        <div>Prefix Applicator</div>
+                    </div>
+                    <div
+                        class="bg-green-50 text-green-600 border border-green-100 rounded-2xl space-x-1.5 py-1 px-1.5 text-sm flex items-center whitespace-nowrap">
+                        <div class="h-3 w-3 bg-green-300 rounded-xl"></div>
+                        <div>Tailwind Applicator</div>
+                    </div>
+                    <div
+                        class="bg-stone-50 text-stone-600 border border-stone-100 rounded-2xl space-x-1.5 py-1 px-1.5 text-sm flex items-center whitespace-nowrap">
+                        <div class="h-3 w-3 bg-stone-300 rounded-xl"></div>
+                        <div>css</div>
+                    </div>
+                    <div
+                        class="bg-slate-50 text-slate-600 border border-slate-100 rounded-2xl space-x-1.5 py-1 px-1.5 text-sm flex items-center whitespace-nowrap">
+                        <div class="h-3 w-3 bg-slate-300 rounded-xl"></div>
+                        <div>Tailwind Applicator css</div>
+                    </div>
+                </div>
             </div>
-            <div class="p-3 flex-1 w-[33%]">
+            <!-- <div class="p-3 flex-1 w-[33%]">
                 <h1 class="mb-5 mt-2 text-2xl text-zinc-100 font-bold">Recent BookMarks</h1>
                 <div class="columns-1 space-y-4" id="bookmarks"></div>
-            </div>
+            </div> -->
             <div class="p-3 flex-1 w-[33%]">
                 <h1 class="mb-5 mt-2 text-2xl text-zinc-100 font-bold">Quick Notes</h1>
                 <div>
@@ -53,14 +105,166 @@
                     </button>
                 </div>
             </div>
-            <div class="overflow-y-auto grow">
-                <div id="stories" class="columns-2 gap-2 pr-3"></div>
+            <div class="overflow-y-auto grow-0 h-full">
+                <div id="stories" class="columns-2 gap-2 pr-3">
+                </div>
+                <div id="links"></div>
             </div>
+
         </div>
     </div>
-    <script src="./scripts/toast.min.js"></script>
+    <!-- <script src="./scripts/toast.min.js"></script>
     <script src="./scripts/script.js"></script>
-    <script src="./scripts/links.js"></script>
+    <script src="./scripts/links.js"></script> -->
+    <script>
+        // const folder = document.querySelector('#folder').addEventListener('click', expandFolder);
+
+        const urls = [
+            {
+                id: 1,
+                title: "Work",
+                isFolder: true,
+                folderChildren: [
+                    {
+                        id: 2,
+                        title: "Tailwind Applicator",
+                        url: "https://tailwindapplicator.com/",
+                        isFolder: false,
+                        icon: "./images/copy.svg",
+                    },
+                    {
+                        id: 3,
+                        title: "Tailwind Applicator",
+                        url: "https://tailwindapplicator.com/",
+                        isFolder: false,
+                        icon: "./images/copy.svg",
+                    },
+                    {
+                        id: 4,
+                        title: "Tailwind Applicator",
+                        url: "https://tailwindapplicator.com/",
+                        isFolder: false,
+                        icon: "./images/copy.svg",
+                    },
+                    {
+                        id: 5,
+                        title: "Tailwind Applicator",
+                        url: "https://tailwindapplicator.com/",
+                        isFolder: false,
+                        icon: "./images/copy.svg",
+                    },
+                    {
+                        id: 6,
+                        title: "Tailwind Applicator",
+                        url: "https://tailwindapplicator.com/",
+                        isFolder: false,
+                        icon: "./images/copy.svg",
+                    }
+                ],
+            },
+            {
+                id: 7,
+                title: "Mail",
+                isFolder: false,
+                url: "https://mail.google.com/mail/u/0/#inbox",
+                icon: "./images/copy.svg",
+            },
+            {
+                id: 8,
+                title: "Tailwind Applicator",
+                isFolder: true,
+                folderChildren: [
+                    {
+                        id: 9,
+                        title: "Tailwind Applicator",
+                        url: "https://tailwindapplicator.com/",
+                        isFolder: false,
+                        icon: "./images/copy.svg",
+                    },
+                    {
+                        id: 10,
+                        title: "Tailwind Applicator",
+                        url: "https://tailwindapplicator.com/",
+                        isFolder: false,
+                        icon: "./images/copy.svg",
+                    },
+                    {
+                        id: 11,
+                        title: "Tailwind Applicator",
+                        url: "https://tailwindapplicator.com/",
+                        isFolder: false,
+                        icon: "./images/copy.svg",
+                    },
+                    {
+                        id: 12,
+                        title: "Tailwind Applicator",
+                        url: "https://tailwindapplicator.com/",
+                        isFolder: false,
+                        icon: "./images/copy.svg",
+                    },
+                    {
+                        id: 13,
+                        title: "Tailwind Applicator",
+                        url: "https://tailwindapplicator.com/",
+                        isFolder: false,
+                        icon: "./images/copy.svg",
+                    }
+                ],
+            }
+        ]
+
+
+        function expandFolder(e) {
+            const folderItem = document.querySelector(`.folderItems[data-folder-id="${e.target.dataset.folderId}"]`);
+            console.log(folderItem);
+            folderItem.classList.toggle('active');
+        }
+
+        const loadLinks = () => {
+            let links = document.querySelector('#links');
+            urls.forEach((url) => {
+                if (url.isFolder) {
+                    const folder = document.createElement('div');
+                    folder.classList.add('folder');
+                    folder.setAttribute('data-folder-id', url.id);
+                    folder.addEventListener('click', expandFolder);
+                    folder.innerHTML = `
+                    <div data-folder-id="${url.id}">${url.title}</div>
+                    `
+                    const folderItems = document.createElement('div');
+                    folderItems.classList.add('folderItems');
+                    folderItems.setAttribute('data-folder-id', url.id);
+                    links.appendChild(folderItems);
+                    url.folderChildren.forEach((child) => {
+                        const folderItem = document.createElement('a');
+                        folderItem.classList.add('qlItem');
+                        folderItem.setAttribute('href', child.url);
+                        folderItem.setAttribute('target', '_blank');
+                        folderItem.setAttribute('data-folder-id', child.id);
+                        folderItem.innerHTML = `
+                        <div>${child.title}</div>
+                        `
+                        folderItems.appendChild(folderItem);
+                    })
+                    folder.appendChild(folderItems);
+                    links.appendChild(folder);
+                } else {
+                    const link = document.createElement('a');
+                    link.classList.add('qlItem');
+                    link.setAttribute('href', url.url);
+                    link.setAttribute('target', '_blank');
+                    link.innerHTML = `
+                    <div>${url.title}</div>
+                    `
+                    links.appendChild(link);
+                }
+            })
+        }
+
+        document.onload = loadLinks();
+
+
+    </script>
 
 </body>
 

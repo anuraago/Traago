@@ -6,75 +6,222 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>New Tab</title>
+    <link href="quill.snow.css" rel="stylesheet" type="text/css" />
     <link rel="stylesheet" href="./newtab.css" type="text/css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
 </head>
 
 <body>
     <div class="info_container">
         <div class="link_N_bookmark">
-            <div class="card time shadow">
-                <h1>12:01</h1>
-                <p>27th March, Monday</p>
-            </div>
-            <div class="card quick_links shadow">
-                <h1 class="header">Quick Links</h1>
-                <div id="recent-urls-list"></div>
-                <div class="form">
-                    <input type="text" id="urlInput" placeholder="url">
-                    <input type="text" id="nameInput" placeholder="Name your quick Link">
-                    <button id="addQL">Add</button>
+            <div class="card mainTitle shadow">
+                <div class="logo"> </div>
+                <div class="title_n_time">
+                    <h1 id="time">00:00</h1>
+                    <p id="date">Someday of the week</p>
                 </div>
-                <button id="showQLForm">+ Add QL</button>
+                <button id="settings">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                        stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round"
+                            d="M10.343 3.94c.09-.542.56-.94 1.11-.94h1.093c.55 0 1.02.398 1.11.94l.149.894c.07.424.384.764.78.93.398.164.855.142 1.205-.108l.737-.527a1.125 1.125 0 011.45.12l.773.774c.39.389.44 1.002.12 1.45l-.527.737c-.25.35-.272.806-.107 1.204.165.397.505.71.93.78l.893.15c.543.09.94.56.94 1.109v1.094c0 .55-.397 1.02-.94 1.11l-.893.149c-.425.07-.765.383-.93.78-.165.398-.143.854.107 1.204l.527.738c.32.447.269 1.06-.12 1.45l-.774.773a1.125 1.125 0 01-1.449.12l-.738-.527c-.35-.25-.806-.272-1.203-.107-.397.165-.71.505-.781.929l-.149.894c-.09.542-.56.94-1.11.94h-1.094c-.55 0-1.019-.398-1.11-.94l-.148-.894c-.071-.424-.384-.764-.781-.93-.398-.164-.854-.142-1.204.108l-.738.527c-.447.32-1.06.269-1.45-.12l-.773-.774a1.125 1.125 0 01-.12-1.45l.527-.737c.25-.35.273-.806.108-1.204-.165-.397-.505-.71-.93-.78l-.894-.15c-.542-.09-.94-.56-.94-1.109v-1.094c0-.55.398-1.02.94-1.11l.894-.149c.424-.07.765-.383.93-.78.165-.398.143-.854-.107-1.204l-.527-.738a1.125 1.125 0 01.12-1.45l.773-.773a1.125 1.125 0 011.45-.12l.737.527c.35.25.807.272 1.204.107.397-.165.71-.505.78-.929l.15-.894z" />
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+                    </svg>
+                </button>
             </div>
-            <div class="card book_marks">
-                <h1 class="header">Bookmarks</h1>
-                <ul id="bookmarks-list"></ul>
+            <div class="card quickLinks shadow">
+                <div class="quickLinks_header">
+                    <h1>Quick Links</h1>
+                    <!-- button to clear all quick links -->
+                    <button class="show_quickLink_btn" id="clear_quickLink_btn">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                            stroke="currentColor" class="w-6 h-6">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M6 18L18 6M6 6l12 12" />
+                        </svg>
+                    </button>
+                    <button class="show_quickLink_btn" id="show_quickLink_btn">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2"
+                            stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M12 4.5v15m7.5-7.5h-15" />
+                        </svg>
+                    </button>
+                </div>
+                <form class="quick_form" action="" id="quick_Link_form">
+                    <div class="innerDiv">
+                        <div>
+                            <input required class="quick_input" type="text" id="urlInput" placeholder="Link URL">
+                        </div>
+                        <div>
+                            <input required class="quick_input" type="text" id="nameInput" placeholder="Name your Link">
+                            <button type="submit" class="quick_btn" id="addQL">Add</button>
+                        </div>
+                        <hr>
+                    </div>
+                </form>
+                <div class="quickLinksList" id="quickLinks-list"></div>
+            </div>
+            <div class="card topsites shadow">
+                <h1 class="topsites_header">Most Visited Sites</h1>
+                <div class="topsite_list" id="topsites-list"></div>
             </div>
         </div>
-        <div class="card notes shadow">
-            <h1 class="header">Notes</h1>
-            <button id="clearnote">clear</button>
-            <div class="note_form">
-                <textarea class="notes_input" id="noteInput" placeholder="Type a quick note"></textarea>
-                <button class="note_add_btn" id="addNote">Add</button>
+        <div class="quickNote_card card shadow">
+            <h1 class="quickNote_card_header">Quick Notes
+                <!-- <img src="../images/topimg1.png" alt=""> -->
+            </h1>
+            <div class="QN_editor_wrapper">
+                <div class="toolbar_and_input">
+                    <div id="editor"></div>
+                </div>
             </div>
-            <div class="notesList" id="notes-list"></div>
+            <div class="QN_search_submit_wrapper">
+                <button class="QN_Add_btn" id="addNoteEditor">Add</button>
+                <div class="QN_searchandsort">
+                    <input type="search" class="QN_search" placeholder="Search notes" id="search_quick_notes">
+                    <button class="QN_IconButton" id="searchIcon">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                            stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round"
+                                d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607z" />
+                        </svg>
+                    </button>
+                    <button class="QN_IconButton" id="closeIcon">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                            stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+                        </svg>
+                    </button>
+                    <button class="QN_IconButton" id="sortUp">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                            stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round"
+                                d="M3 4.5h14.25M3 9h9.75M3 13.5h5.25m5.25-.75L17.25 9m0 0L21 12.75M17.25 9v12" />
+                        </svg>
+                    </button>
+                    <button class="QN_IconButton" id="sortDown">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                            stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round"
+                                d="M3 4.5h14.25M3 9h9.75M3 13.5h9.75m4.5-4.5v12m0 0l-3.75-3.75M17.25 21L21 17.25" />
+                        </svg>
+                    </button>
+                </div>
+            </div>
+            <div class="editorList" id="editorList"></div>
         </div>
     </div>
     <div class="story_container">
         <div class="titleContainer">
-            <h2>Tech Stories</h2>
+            <h2 class="header">Quick Tech Stories</h2>
             <div class="story_layouts">
                 <button class="layout_btn" aria-label="listview" id="layout_1">
-                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
-                        stroke="currentColor">
-                        <path stroke-linecap="round" stroke-linejoin="round"
-                            d="M3.75 12h16.5m-16.5 3.75h16.5M3.75 19.5h16.5M5.625 4.5h12.75a1.875 1.875 0 010 3.75H5.625a1.875 1.875 0 010-3.75z" />
+                    <svg stroke="currentColor" fill="none" stroke-width="2" viewBox="0 0 24 24" stroke-linecap="round"
+                        stroke-linejoin="round" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
+                        <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                        <path d="M13 5h8"></path>
+                        <path d="M13 9h5"></path>
+                        <path d="M13 15h8"></path>
+                        <path d="M13 19h5"></path>
+                        <path d="M3 4m0 1a1 1 0 0 1 1 -1h4a1 1 0 0 1 1 1v4a1 1 0 0 1 -1 1h-4a1 1 0 0 1 -1 -1z"></path>
+                        <path d="M3 14m0 1a1 1 0 0 1 1 -1h4a1 1 0 0 1 1 1v4a1 1 0 0 1 -1 1h-4a1 1 0 0 1 -1 -1z"></path>
                     </svg>
                 </button>
                 <button class="layout_btn" aria-label="gridview" id="layout_2">
-                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
-                        stroke="currentColor">
-                        <path stroke-linecap="round" stroke-linejoin="round"
-                            d="M3.75 6A2.25 2.25 0 016 3.75h2.25A2.25 2.25 0 0110.5 6v2.25a2.25 2.25 0 01-2.25 2.25H6a2.25 2.25 0 01-2.25-2.25V6zM3.75 15.75A2.25 2.25 0 016 13.5h2.25a2.25 2.25 0 012.25 2.25V18a2.25 2.25 0 01-2.25 2.25H6A2.25 2.25 0 013.75 18v-2.25zM13.5 6a2.25 2.25 0 012.25-2.25H18A2.25 2.25 0 0120.25 6v2.25A2.25 2.25 0 0118 10.5h-2.25a2.25 2.25 0 01-2.25-2.25V6zM13.5 15.75a2.25 2.25 0 012.25-2.25H18a2.25 2.25 0 012.25 2.25V18A2.25 2.25 0 0118 20.25h-2.25A2.25 2.25 0 0113.5 18v-2.25z" />
+                    <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 16 16" height="1em"
+                        width="1em" xmlns="http://www.w3.org/2000/svg">
+                        <path
+                            d="M1 2.5A1.5 1.5 0 0 1 2.5 1h3A1.5 1.5 0 0 1 7 2.5v3A1.5 1.5 0 0 1 5.5 7h-3A1.5 1.5 0 0 1 1 5.5v-3zM2.5 2a.5.5 0 0 0-.5.5v3a.5.5 0 0 0 .5.5h3a.5.5 0 0 0 .5-.5v-3a.5.5 0 0 0-.5-.5h-3zm6.5.5A1.5 1.5 0 0 1 10.5 1h3A1.5 1.5 0 0 1 15 2.5v3A1.5 1.5 0 0 1 13.5 7h-3A1.5 1.5 0 0 1 9 5.5v-3zm1.5-.5a.5.5 0 0 0-.5.5v3a.5.5 0 0 0 .5.5h3a.5.5 0 0 0 .5-.5v-3a.5.5 0 0 0-.5-.5h-3zM1 10.5A1.5 1.5 0 0 1 2.5 9h3A1.5 1.5 0 0 1 7 10.5v3A1.5 1.5 0 0 1 5.5 15h-3A1.5 1.5 0 0 1 1 13.5v-3zm1.5-.5a.5.5 0 0 0-.5.5v3a.5.5 0 0 0 .5.5h3a.5.5 0 0 0 .5-.5v-3a.5.5 0 0 0-.5-.5h-3zm6.5.5A1.5 1.5 0 0 1 10.5 9h3a1.5 1.5 0 0 1 1.5 1.5v3a1.5 1.5 0 0 1-1.5 1.5h-3A1.5 1.5 0 0 1 9 13.5v-3zm1.5-.5a.5.5 0 0 0-.5.5v3a.5.5 0 0 0 .5.5h3a.5.5 0 0 0 .5-.5v-3a.5.5 0 0 0-.5-.5h-3z">
+                        </path>
                     </svg>
                 </button>
             </div>
             <div class="vert-divider"></div>
             <button title="Saved Stories" class="layout_btn" id="savedStories">
-                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
-                    stroke="currentColor" class="w-6 h-6">
-                    <path stroke-linecap="round" stroke-linejoin="round"
-                        d="M16.5 3.75V16.5L12 14.25 7.5 16.5V3.75m9 0H18A2.25 2.25 0 0120.25 6v12A2.25 2.25 0 0118 20.25H6A2.25 2.25 0 013.75 18V6A2.25 2.25 0 016 3.75h1.5m9 0h-9" />
+                <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 16 16" height="1em"
+                    width="1em" xmlns="http://www.w3.org/2000/svg">
+                    <path fill-rule="evenodd"
+                        d="M8 4.41c1.387-1.425 4.854 1.07 0 4.277C3.146 5.48 6.613 2.986 8 4.412z"></path>
+                    <path
+                        d="M2 2a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v13.5a.5.5 0 0 1-.777.416L8 13.101l-5.223 2.815A.5.5 0 0 1 2 15.5V2zm2-1a1 1 0 0 0-1 1v12.566l4.723-2.482a.5.5 0 0 1 .554 0L13 14.566V2a1 1 0 0 0-1-1H4z">
+                    </path>
                 </svg>
-
             </button>
         </div>
         <div class="padContainer">
             <div class="storyDiv image" id="stories"></div>
         </div>
     </div>
+    <!-- sidebars from right -->
+    <div class="story-sidebar" id="story-sidebar">
+        <div class="story-sidebar-header">
+            <h1>Saved Stories</h1>
+            <button id="story-sidebar-close-btn" class="story-sidebar-close-btn">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                    stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                </svg>
+            </button>
+        </div>
+        <div class="story-sidebar-content">
+            <div class="story-sidebar-padContainer" id="story-sidebar-content"></div>
+        </div>
+    </div>
+    <!-- settings sidebar element -->
+    <div class="settings-sidebar" id="settings-sidebar">
+        <div class="settings-sidebar-header">
+            <h1>Settings</h1>
+            <button id="settings-sidebar-close-btn" class="settings-sidebar-close-btn">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                    stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                </svg>
+            </button>
+        </div>
+        <div class="settings-sidebar-content">
+            <div class="settings-sidebar-padContainer" id="settings-sidebar-content"></div>
+        </div>
+    </div>
+
+
+
+    <!-- overlay sidebar from right -->
+    <!-- add overlay below sidebar -->
+    <div class="overlay" id="overlay"></div>
+
+    <script src="quill.min.js" type="text/javascript"></script>
+    <script src="./story.js" type="text/javascript"></script>
     <script src="newtab.js" type="text/javascript"></script>
+    <script src="test.js" type="text/javascript"></script>
 </body>
 
 </html>
+
+<!-- <div class="card notes shadow">
+            <h1 class="header">Quick Notes</h1>
+            <button id="clearnote">clear</button>
+            <div class="note_form">
+                <textarea class="notes_input" id="noteInput" placeholder="Type a quick note"></textarea>
+                <button class="note_add_btn" id="addNote">Add</button>
+            </div>
+            <div class="notesList" id="notes-list"></div>
+        </div> -->
+
+<!-- <div class="card book_marks">
+                <h1 class="header">Bookmarks</h1>
+                <div id="bookmarks-list" class="bookmark_list">
+                    <a class="bookmark" href="https://www.youtube.com">
+                        <div class="bookmark_img">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                                stroke="currentColor" class="w-6 h-6">
+                                <path stroke-linecap="round" stroke-linejoin="round"
+                                    d="M17.593 3.322c1.1.128 1.907 1.077 1.907 2.185V21L12 17.25 4.5 21V5.507c0-1.108.806-2.057 1.907-2.185a48.507 48.507 0 0111.186 0z" />
+                            </svg>
+                        </div>
+                        <div class="bookmark_title">Youtube</div>
+                    </a>
+                </div>
+            </div> -->
